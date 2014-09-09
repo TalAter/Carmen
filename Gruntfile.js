@@ -48,7 +48,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['src/locus.js', '!**/node_modules/**'],
+      files: ['src/locus.js', 'test/spec/**.js', '!**/node_modules/**'],
       tasks: ['default'],
     },
     jasmine: {
@@ -56,7 +56,8 @@ module.exports = function(grunt) {
         src: 'src/*.js',
         options: {
           specs: 'test/spec/spec.js',
-          outfile: 'test/SpecRunner.html'
+          outfile: 'test/SpecRunner.html',
+          keepRunner: true
         }
       }
     }
