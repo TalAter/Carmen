@@ -1,0 +1,25 @@
+{
+  "name": "locus",
+  "version": "0.1.0",
+  "description": "Geofencing library",
+  "homepage": "https://github.com/TalAter/locus",
+  "main": "locus.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TalAter/locus.git"
+  },
+  "keywords": [
+    "locus",
+    "locus.js",
+    "location",
+    "geofencing"
+  ],
+  "author": "Tal Ater <tal@talater.com> (https://www.talater.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TalAter/locus/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5"
+  }
+}
