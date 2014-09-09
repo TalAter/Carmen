@@ -1,3 +1,15 @@
+var testFences = {
+  'Azrieli': {
+    'coord': '32.074194, 34.791949',
+    'fn': function() {}
+  },
+  'Moscone': {
+    'coord': '37.783944,-122.401289',
+    'radius': '300m',
+    'fn': function() {}
+  }
+};
+
 describe('Locus', function() {
   'use strict';
 
@@ -30,22 +42,10 @@ describe('Locus.addFences', function() {
   'use strict';
 
   it('should add fences when passed an object containing a few fences', function() {
-    var knownFences;
-
-    knownFences = Locus.getFences();
+    var knownFences = Locus.getFences();
     expect(knownFences['Azrieli']).not.toBeDefined();
 
-    Locus.addFences({
-      'Azrieli': {
-        'coord': '32.074194, 34.791949',
-        'fn': function() {}
-      },
-      'Moscone': {
-        'coord': '37.783944,-122.401289',
-        'radius': '300m',
-        'fn': function() {}
-      }
-    });
+    Locus.addFences(testFences);
 
     knownFences = Locus.getFences();
     expect(knownFences['Azrieli']).toBeDefined();
