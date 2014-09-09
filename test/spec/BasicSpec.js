@@ -90,10 +90,22 @@
       Locus.addFences(_threeFences);
       expect(Object.keys(knownFences).length).toBe(3);
 
-
+      Locus.addFences(_oneFence);
+      expect(Object.keys(knownFences).length).toBe(4);
+      expect(knownFences['Hagia Sophia']).toBeDefined();
+      expect(knownFences['Ernest Hemingway House']).toBeDefined();
     });
 
-    xit('should overwrite previously added fences with same name');
+    it('should overwrite previously added fences with same name', function() {
+      var knownFences = Locus.getFences();
+      expect(Object.keys(knownFences).length).toBe(0);
+
+      Locus.addFences(_threeFences);
+      expect(Object.keys(knownFences).length).toBe(3);
+
+      Locus.addFences(_threeFences);
+      expect(Object.keys(knownFences).length).toBe(3);
+    });
   });
 
   describe('Locus.removeFences', function() {
