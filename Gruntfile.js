@@ -8,4 +8,7 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('default', []);
 
+  // Test task
+  grunt.registerTask('test', []);
+
 };
