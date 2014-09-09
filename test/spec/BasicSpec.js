@@ -14,15 +14,15 @@ describe('Locus', function() {
   'use strict';
 
   it('should exist in global namespace', function () {
-    expect(window.Locus).toBeDefined();
+    expect(window.Locus).toEqual(jasmine.any(Object));
   });
 
   it('should contain addFences method', function () {
-    expect(window.Locus.addFences).toBeDefined();
+    expect(window.Locus.addFences).toEqual(jasmine.any(Function));
   });
 
   it('should contain getFences method', function () {
-    expect(window.Locus.getFences).toBeDefined();
+    expect(window.Locus.getFences).toEqual(jasmine.any(Function));
   });
 
 });
