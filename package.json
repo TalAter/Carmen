@@ -23,6 +23,7 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": "~0.4.5",
+    "grunt-contrib-jasmine": "^0.7.0"
   }
 }
