@@ -34,7 +34,16 @@
      * @method addFences
      */
     addFences: function(fences) {
-      _fences = fences;
+      for (var fenceName in fences) {
+        if (fences.hasOwnProperty(fenceName)) {
+          var fence = fences[fenceName];
+          _fences[fenceName] = {
+            'coord':  fence['coord'],
+            'fn':     fence['fn']
+          };
+        }
+      }
+      return;
     },
 
     //@TODO: Describe object returned in more detail
@@ -46,7 +55,40 @@
      */
     getFences: function() {
       return _fences;
+    },
+
+    /**
+     * Remove existing fences. Called with a single phrase, array of phrases, or methodically. Pass no params to remove all fences.
+     *
+     * ### Examples:
+     *
+     *     // Remove all existing commands
+     *     Locus.removeFences();
+     *
+     *     // Remove just one fence
+     *     Locus.removeFences('Moscone');
+     *
+     *     // Remove two fences
+     *     Locus.removeFences(['Moscone', 'Val Thorens']);
+     *
+     * @param {String|Array|Undefined} [fencesToRemove] - Fences to remove
+     * @method removeFences
+     */
+    removeFences: function(fencesToRemove) {
+      if (fencesToRemove === undefined) {
+        _fences = {};
+        return;
+      }
+
+      fencesToRemove = Array.isArray(fencesToRemove) ? fencesToRemove : [fencesToRemove];
+
+      fencesToRemove.forEach(function(fenceToRemove) {
+        delete _fences[fenceToRemove];
+      });
+
+      return;
     }
+
   };
 
 }).call(this);
