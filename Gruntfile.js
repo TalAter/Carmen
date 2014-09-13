@@ -6,35 +6,11 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
       all: [
-        'Gruntfile.js',
-        'src/locus.js'
+        'src/locus.js',
+        'Gruntfile.js'
       ],
       options: {
-        "node"      : true,
-        "browser"   : true,
-        "devel"     : false,
-        "camelcase" : true,
-        "curly"     : true,
-        "latedef"   : true,
-        "unused"    : true,
-        "trailing"  : true,
-        "eqeqeq"    : true,
-        "eqnull"    : true,
-        "evil"      : false,
-        "forin"     : true,
-        "immed"     : true,
-        "laxbreak"  : false,
-        "newcap"    : true,
-        "noarg"     : true,
-        "noempty"   : false,
-        "nonew"     : true,
-        "onevar"    : false,
-        "plusplus"  : false,
-        "undef"     : true,
-        "sub"       : true,
-        "strict"    : true,
-        "white"     : false,
-        "indent"    : 2
+        jshintrc: '.jshintrc'
       }
     },
     uglify: {
