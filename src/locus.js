@@ -16,7 +16,7 @@
   // Expose functionality
   _root.Locus = {
 
-    //@TODO: Describe object in more detail
+    //@TODO: Describe the input object in more detail
     /**
      * add new fences to Locus
      *
