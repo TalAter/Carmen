@@ -7,10 +7,11 @@ module.exports = function(grunt) {
     jshint: {
       all: [
         'src/locus.js',
-        'Gruntfile.js'
+        'Gruntfile.js',
+        'test/spec/*Spec.js'
       ],
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: true
       }
     },
     uglify: {

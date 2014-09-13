@@ -1,4 +1,6 @@
 (function() {
+  "use strict";
+
   var _threeFences = {
     'Rock of Gibraltar': {
       'coord': '36.125833, -5.343056',
@@ -34,7 +36,6 @@
   };
 
   describe('Locus', function() {
-    'use strict';
 
     it('should exist in global namespace', function () {
       expect(window.Locus).toEqual(jasmine.any(Object));
@@ -55,7 +56,6 @@
   });
 
   describe('Locus.getFences', function() {
-    'use strict';
 
     it('should return an object', function() {
       var knownFences = Locus.getFences();
@@ -66,7 +66,6 @@
   });
 
   describe('Locus.addFences', function() {
-    'use strict';
 
     afterEach(function() {
       Locus.removeFences();
@@ -74,13 +73,13 @@
 
     it('should add fences when passed an object containing a few fences', function() {
       var knownFences = Locus.getFences();
-      expect(knownFences['Ernest Hemingway House']).not.toBeDefined();
+      expect(knownFences['Sugarloaf Mountain']).not.toBeDefined();
 
-      Locus.addFences(_threeFences);
+      Locus.addFences(_twoFences);
 
       knownFences = Locus.getFences();
-      expect(knownFences['Ernest Hemingway House']).toBeDefined();
-      expect(Object.keys(knownFences).length).toBe(3);
+      expect(knownFences['Sugarloaf Mountain']).toBeDefined();
+      expect(Object.keys(knownFences).length).toBe(2);
     });
 
     it('should add fences without deleting previously added fences', function() {
@@ -109,7 +108,6 @@
   });
 
   describe('Locus.removeFences', function() {
-    'use strict';
 
     beforeEach(function() {
       Locus.addFences(_threeFences);
