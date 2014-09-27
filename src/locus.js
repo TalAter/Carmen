@@ -15,7 +15,6 @@
 
   // Check browser support
   // This is done as early as possible, to make it as fast as possible for unsupported browsers
-  // @TODO: Check Modernizer to see if this can be improved
   if (!_geolocation) {
     _root.Locus = null;
     return undefined;
@@ -56,7 +55,6 @@
     var lat2 = coords2.latitude;
     var lon1 = coords1.longitude;
     var lon2 = coords2.longitude;
-    // @TODO: add support for both Metric and Imperial
     // var R = 3958.8; // miles
     var R = 6371; // km
     var φ1 = lat1 * _d2r;
@@ -79,7 +77,6 @@
   };
 
   // Parse a given coordinates string or object
-  // @TODO: Expand to work with different inputs
   var _parseCoords = function(coords) {
     coords = coords.replace(/[^\d\,\-\.]/, '');
     coords = coords.split(',');
@@ -87,7 +84,6 @@
   };
 
   // Parse a given radius string
-  // @TODO: Expand to work with different inputs
   var _parseRadius = function(radius) {
     return parseFloat(radius.replace(/[^\d\,\-\.]/, ''));
   };
@@ -118,7 +114,6 @@
       for (var fenceName in fences) {
         if (fences.hasOwnProperty(fenceName)) {
           var fence = fences[fenceName];
-          // @TODO: Make sure coordinates parsed well
           _fences[fenceName] = {
             'coords':     _parseCoords(fence['coords']),
             'radius':     _parseRadius(fence['radius'] || '500m'),
@@ -185,7 +180,6 @@
         return false;
       }
 
-      // @TODO: Handle errors
       _watcherId = _geolocation.watchPosition(_locationPing);
       return true;
     }
