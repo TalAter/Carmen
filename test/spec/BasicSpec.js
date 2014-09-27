@@ -53,6 +53,10 @@
       expect(window.Locus.removeFences).toEqual(jasmine.any(Function));
     });
 
+    it('should contain start method', function () {
+      expect(window.Locus.start).toEqual(jasmine.any(Function));
+    });
+
   });
 
   describe('Locus.getFences', function() {
