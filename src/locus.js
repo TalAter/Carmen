@@ -47,19 +47,52 @@
     }
   };
 
-  // Are the given coordinates within the given fence?
-  // @TODO: Improve to work with fences, and not just exact match
-  var _coordsInFence = function(coords, fence) {
-    return coords.longitude === fence.coords.longitude && coords.latitude === fence.coords.latitude;
+  // Converting degrees to radians
+  var _d2r = Math.PI / 180;
+
+  // Calculate distance between two points using haversine formula
+  var _calculateDistance = function(coords1, coords2) {
+    var lat1 = coords1.latitude;
+    var lat2 = coords2.latitude;
+    var lon1 = coords1.longitude;
+    var lon2 = coords2.longitude;
+    // @TODO: add support for both Metric and Imperial
+    // var R = 3958.8; // miles
+    var R = 6371; // km
+    var φ1 = lat1 * _d2r;
+    var φ2 = lat2 * _d2r;
+    var Δφ = (lat2-lat1) * _d2r;
+    var Δλ = (lon2-lon1) * _d2r;
+
+    var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+            Math.cos(φ1) * Math.cos(φ2) *
+            Math.sin(Δλ/2) * Math.sin(Δλ/2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+    return R * c;
+
   };
 
-  // Parse a give coordinates string or object
+  // Are the given coordinates within the given fence?
+  var _coordsInFence = function(coords, fence) {
+    return _calculateDistance(coords, fence.coords)*1000 <= fence.radius;
+  };
+
+  // Parse a given coordinates string or object
   // @TODO: Expand to work with different inputs
   var _parseCoords = function(coords) {
     coords = coords.replace(/[^\d\,\-\.]/, '');
     coords = coords.split(',');
     return {latitude: parseFloat(coords[0]), longitude: parseFloat(coords[1])};
   };
+
+  // Parse a given radius string
+  // @TODO: Expand to work with different inputs
+  var _parseRadius = function(radius) {
+    return parseFloat(radius.replace(/[^\d\,\-\.]/, ''));
+  };
+
+
 
   // Expose functionality
   _root.Locus = {
@@ -88,6 +121,7 @@
           // @TODO: Make sure coordinates parsed well
           _fences[fenceName] = {
             'coords':     _parseCoords(fence['coords']),
+            'radius':     _parseRadius(fence['radius'] || '500m'),
             'fn':         fence['fn'],
             'inhabited':  false
           };

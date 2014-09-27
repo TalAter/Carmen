@@ -57,7 +57,7 @@
 
       // Visit a location
       geolocation.setCurrentPosition({coords:{latitude: 24.551130, longitude: -81.800790}, timestamp: new Date().getTime()});
-      geolocation.setCurrentPosition({coords:{latitude: 24.551130, longitude: -81.800790}, timestamp: new Date().getTime()});
+      geolocation.setCurrentPosition({coords:{latitude: 24.551140, longitude: -81.800780}, timestamp: new Date().getTime()});
 
       expect(spyOnHemingway).toHaveBeenCalled();
       expect(spyOnHemingway.calls.count()).toEqual(1);
@@ -75,16 +75,24 @@
       expect(spyOnHemingway.calls.count()).toEqual(2);
     });
 
-    xit('should match when inside a fence', function () {
+    it('should match when inside a fence', function () {
       expect(spyOnGibraltar).not.toHaveBeenCalled();
-      expect(spyOnHemingway).not.toHaveBeenCalled();
+      expect(spyOnFortKnox).not.toHaveBeenCalled();
 
-      // Visit a location
-      geolocation.setCurrentPosition({coords:{latitude: 24.550640, longitude: -81.800630}, timestamp: new Date().getTime()});
+      // Visit a location inside a fence
+      geolocation.setCurrentPosition({coords:{latitude: 37.915498, longitude: -85.956170}, timestamp: new Date().getTime()});
+      expect(spyOnFortKnox.calls.count()).toEqual(1);
 
+      // Leave location radius
+      geolocation.setCurrentPosition({coords:{latitude: 37.913497, longitude: -85.953383}, timestamp: new Date().getTime()});
+      expect(spyOnFortKnox.calls.count()).toEqual(1);
+
+      // Enter location radius
+      geolocation.setCurrentPosition({coords:{latitude: 37.914966, longitude: -85.954424}, timestamp: new Date().getTime()});
+      expect(spyOnFortKnox.calls.count()).toEqual(2);
+
+      // Make sure unrelated fences weren't called
       expect(spyOnGibraltar).not.toHaveBeenCalled();
-      expect(spyOnHemingway).toHaveBeenCalled();
-      expect(spyOnHemingway.calls.count()).toEqual(1);
     });
   });
 })();
