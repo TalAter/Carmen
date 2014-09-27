@@ -3,15 +3,15 @@
 
   var _threeFences = {
     'Rock of Gibraltar': {
-      'coord': '36.125833, -5.343056',
+      'coords': '36.125833, -5.343056',
       'fn': function() {}
     },
     'Ernest Hemingway House': {
-      'coord': '24.551130, -81.800790',
+      'coords': '24.551130, -81.800790',
       'fn': function() {}
     },
     'Fort Knox': {
-      'coord': '37.915499, -85.956172',
+      'coords': '37.915499, -85.956172',
       'radius': '300m',
       'fn': function() {}
     }
@@ -19,18 +19,18 @@
 
   var _oneFence = {
     'Hagia Sophia': {
-      'coord': '41.008580, 28.980176',
+      'coords': '41.008580, 28.980176',
       'fn': function() {}
     }
   };
 
   var _twoFences = {
     'Sugarloaf Mountain': {
-      'coord': '-22.949932, -43.155149',
+      'coords': '-22.949932, -43.155149',
       'fn': function() {}
     },
     'Millennium Dome': {
-      'coord': '51.502817, 0.003117',
+      'coords': '51.502817, 0.003117',
       'fn': function() {}
     }
   };

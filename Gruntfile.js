@@ -34,7 +34,8 @@ module.exports = function(grunt) {
         options: {
           specs: 'test/spec/*Spec.js',
           outfile: 'test/SpecRunner.html',
-          keepRunner: true
+          keepRunner: true,
+          vendor: 'test/georilla.js'
         }
       }
     }

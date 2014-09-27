@@ -10,8 +10,47 @@
   // Save a reference to the global object (window in the browser)
   var _root = this;
 
+  // Get the GeoLocation object
+  var _geolocation = navigator.geolocation;
+
+  // Check browser support
+  // This is done as early as possible, to make it as fast as possible for unsupported browsers
+  // @TODO: Check Modernizer to see if this can be improved
+  if (!_geolocation) {
+    _root.Locus = null;
+    return undefined;
+  }
+
   // Holds all known fences
   var _fences = {};
+
+  // Run every time a location is changed, or first identified
+  var _locationPing = function(pos) {
+    // try and see if current location is in any of the fences
+    for (var fenceName in _fences) {
+      if (_fences.hasOwnProperty(fenceName)) {
+        var fence = _fences[fenceName];
+        if (_coordsInFence(pos.coords, fence)) {
+          // @TODO: Don't rerun function when moving inside a fence
+          fence.fn();
+        }
+      }
+    }
+  };
+
+  // Are the given coordinates within the given fence?
+  // @TODO: Improve to work with fences, and not just exact match
+  var _coordsInFence = function(coords, fence) {
+    return coords.longitude === fence.coords.longitude && coords.latitude === fence.coords.latitude;
+  };
+
+  // Parse a give coordinates string or object
+  // @TODO: Expand to work with different inputs
+  var _parseCoords = function(coords) {
+    coords = coords.replace(/[^\d\,\-\.]/, '');
+    coords = coords.split(',');
+    return {latitude: parseFloat(coords[0]), longitude: parseFloat(coords[1])};
+  };
 
   // Expose functionality
   _root.Locus = {
@@ -23,7 +62,7 @@
      * ### Examples:
      *
      *     var fences = {'Moscone': {
-     *      'coord': '37.783944,-122.401289',
+     *      'coords': '37.783944,-122.401289',
      *      'radius': '300m',
      *      'fn': function() {}
      *     }};
@@ -37,8 +76,9 @@
       for (var fenceName in fences) {
         if (fences.hasOwnProperty(fenceName)) {
           var fence = fences[fenceName];
+          // @TODO: Make sure coordinates parsed well
           _fences[fenceName] = {
-            'coord':  fence['coord'],
+            'coords': _parseCoords(fence['coords']),
             'fn':     fence['fn']
           };
         }
@@ -87,6 +127,18 @@
       });
 
       return;
+    },
+
+    /**
+     * Start looking at user's location
+     *
+     * @method start
+     */
+    start: function() {
+      // @TODO: Handle errors
+      // @TODO: Check if already started
+      _geolocation.getCurrentPosition(_locationPing);
+      _geolocation.watchPosition(_locationPing);
     }
 
   };

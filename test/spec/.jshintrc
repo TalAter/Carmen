@@ -32,7 +32,7 @@
     "jasmine":      false,
     "it":           false,
     "xit":          false,
-    "Locus"
-    :        false
+    "georilla":     false,
+    "Locus":        false
   }
 }
