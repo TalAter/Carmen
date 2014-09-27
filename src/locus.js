@@ -24,6 +24,8 @@
   // Holds all known fences
   var _fences = {};
 
+  var _watcherId;
+
   // Run every time a location is changed, or first identified
   var _locationPing = function(pos) {
     // try and see if current location is in any of the fences
@@ -133,12 +135,17 @@
      * Start looking at user's location
      *
      * @method start
+     * @return {Boolean} Started?
      */
     start: function() {
+      // Check if already started
+      if (_watcherId) {
+        return false;
+      }
+
       // @TODO: Handle errors
-      // @TODO: Check if already started
-      _geolocation.getCurrentPosition(_locationPing);
-      _geolocation.watchPosition(_locationPing);
+      _watcherId = _geolocation.watchPosition(_locationPing);
+      return true;
     }
 
   };

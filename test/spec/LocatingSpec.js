@@ -49,6 +49,7 @@
 
       expect(spyOnGibraltar).not.toHaveBeenCalled();
       expect(spyOnHemingway).toHaveBeenCalled();
+      expect(spyOnHemingway.calls.count()).toEqual(1);
     });
 
     xit('should match when inside a fence', function () {
@@ -60,6 +61,7 @@
 
       expect(spyOnGibraltar).not.toHaveBeenCalled();
       expect(spyOnHemingway).toHaveBeenCalled();
+      expect(spyOnHemingway.calls.count()).toEqual(1);
     });
   });
 })();
