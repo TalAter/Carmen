@@ -52,6 +52,29 @@
       expect(spyOnHemingway.calls.count()).toEqual(1);
     });
 
+    it('shouldn\'t match twice when moving inside a fence', function () {
+      expect(spyOnHemingway).not.toHaveBeenCalled();
+
+      // Visit a location
+      geolocation.setCurrentPosition({coords:{latitude: 24.551130, longitude: -81.800790}, timestamp: new Date().getTime()});
+      geolocation.setCurrentPosition({coords:{latitude: 24.551130, longitude: -81.800790}, timestamp: new Date().getTime()});
+
+      expect(spyOnHemingway).toHaveBeenCalled();
+      expect(spyOnHemingway.calls.count()).toEqual(1);
+    });
+
+    it('should match twice when entering fence, leaving it and entering it again', function () {
+      expect(spyOnHemingway).not.toHaveBeenCalled();
+
+      // Visit a location
+      geolocation.setCurrentPosition({coords:{latitude: 24.551130, longitude: -81.800790}, timestamp: new Date().getTime()});
+      geolocation.setCurrentPosition({coords:{latitude: 0,         longitude: 0         }, timestamp: new Date().getTime()});
+      geolocation.setCurrentPosition({coords:{latitude: 24.551130, longitude: -81.800790}, timestamp: new Date().getTime()});
+
+      expect(spyOnHemingway).toHaveBeenCalled();
+      expect(spyOnHemingway.calls.count()).toEqual(2);
+    });
+
     xit('should match when inside a fence', function () {
       expect(spyOnGibraltar).not.toHaveBeenCalled();
       expect(spyOnHemingway).not.toHaveBeenCalled();

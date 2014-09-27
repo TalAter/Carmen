@@ -24,7 +24,9 @@
   // Holds all known fences
   var _fences = {};
 
+  // The id of the geolocation watchPosition
   var _watcherId;
+
 
   // Run every time a location is changed, or first identified
   var _locationPing = function(pos) {
@@ -32,10 +34,15 @@
     for (var fenceName in _fences) {
       if (_fences.hasOwnProperty(fenceName)) {
         var fence = _fences[fenceName];
-        if (_coordsInFence(pos.coords, fence)) {
-          // @TODO: Don't rerun function when moving inside a fence
-          fence.fn();
+        var fenceMatched = _coordsInFence(pos.coords, fence);
+
+        if (fenceMatched) {
+          // Don't rerun function when moving inside a fence
+          if (!fence.inhabited) {
+            fence.fn();
+          }
         }
+        fence.inhabited = fenceMatched;
       }
     }
   };
@@ -80,8 +87,9 @@
           var fence = fences[fenceName];
           // @TODO: Make sure coordinates parsed well
           _fences[fenceName] = {
-            'coords': _parseCoords(fence['coords']),
-            'fn':     fence['fn']
+            'coords':     _parseCoords(fence['coords']),
+            'fn':         fence['fn'],
+            'inhabited':  false
           };
         }
       }
