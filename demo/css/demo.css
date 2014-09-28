@@ -3,7 +3,7 @@ body {
 }
 
 .jumbotron {
-  padding: 0 0;
+  padding: 30px 0 0;
   z-index: 1;
   position: relative;
   background-color: transparent;
@@ -24,4 +24,33 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.jumbotron .navbar {
+  margin-top: 60px;
+}
+
+.jumbotron .navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  text-align: center;
+}
+.jumbotron .navbar .navbar-nav li {
+  float: left;
+}
+.jumbotron nav a {
+  color: #d24d57;
+  font-weight: bold;
+  font-size: 18px
+}
+
+.jumbotron nav a span {
+  font-size: 35px;
+  display: block;
+}
+
+.jumbotron nav a:hover, .jumbotron nav a:focus {
+  background-color: transparent;
+  color: #CF000F;
 }
