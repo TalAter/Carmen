@@ -28,12 +28,12 @@
         }
       };
 
-      Locus.addFences(_threeFences);
-      Locus.start();
+      Carmen.addFences(_threeFences);
+      Carmen.start();
     });
 
     afterEach(function() {
-      Locus.removeFences();
+      Carmen.removeFences();
     });
 
     it('should not match when outside a fence', function () {

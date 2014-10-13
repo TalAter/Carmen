@@ -1,23 +1,23 @@
 {
-  "name": "locus",
+  "name": "Carmen",
   "version": "0.1.0",
   "description": "Geofencing library",
-  "homepage": "https://github.com/TalAter/locus",
-  "main": "locus.js",
+  "homepage": "https://github.com/TalAter/Carmen",
+  "main": "carmen.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TalAter/locus.git"
+    "url": "https://github.com/TalAter/Cocus.git"
   },
   "keywords": [
-    "locus",
-    "locus.js",
+    "carmen",
+    "carmen.js",
     "location",
     "geofencing"
   ],
   "author": "Tal Ater <tal@talater.com> (https://www.talater.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TalAter/locus/issues"
+    "url": "https://github.com/TalAter/Carmen/issues"
   },
   "scripts": {
     "test": "grunt test"

@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
       all: [
-        'src/locus.js',
+        'src/carmen.js',
         'Gruntfile.js',
         'test/spec/*Spec.js'
       ],
@@ -20,12 +20,12 @@ module.exports = function(grunt) {
       },
       all: {
         files: {
-          'dist/locus.min.js': ['src/locus.js']
+          'dist/carmen.min.js': ['src/carmen.js']
         }
       }
     },
     watch: {
-      files: ['src/locus.js', 'test/spec/**.js', '!**/node_modules/**'],
+      files: ['src/carmen.js', 'test/spec/**.js', '!**/node_modules/**'],
       tasks: ['default'],
     },
     jasmine: {

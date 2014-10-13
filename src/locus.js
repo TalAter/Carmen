@@ -1,8 +1,8 @@
-//! locus
+//! Carmen
 //! version : 0.1.0
 //! author  : Tal Ater @TalAter
 //! license : MIT
-//! https://github.com/TalAter/locus
+//! https://github.com/TalAter/Carmen
 
 (function (undefined) {
   "use strict";
@@ -16,7 +16,7 @@
   // Check browser support
   // This is done as early as possible, to make it as fast as possible for unsupported browsers
   if (!_geolocation) {
-    _root.Locus = null;
+    _root.Carmen = null;
     return undefined;
   }
 
@@ -91,11 +91,11 @@
 
 
   // Expose functionality
-  _root.Locus = {
+  _root.Carmen = {
 
     //@TODO: Describe the input object in more detail
     /**
-     * add new fences to Locus
+     * add new fences to Carmen
      *
      * ### Examples:
      *
@@ -105,7 +105,7 @@
      *      'fn': function() {}
      *     }};
      *
-     *     locus.addFences(fences);
+     *     carmen.addFences(fences);
      *
      * @param {Object} fences - fences to add
      * @method addFences
@@ -142,13 +142,13 @@
      * ### Examples:
      *
      *     // Remove all existing commands
-     *     Locus.removeFences();
+     *     Carmen.removeFences();
      *
      *     // Remove just one fence
-     *     Locus.removeFences('Moscone');
+     *     Carmen.removeFences('Moscone');
      *
      *     // Remove two fences
-     *     Locus.removeFences(['Moscone', 'Val Thorens']);
+     *     Carmen.removeFences(['Moscone', 'Val Thorens']);
      *
      * @param {String|Array|Undefined} [fencesToRemove] - Fences to remove
      * @method removeFences
