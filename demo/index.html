@@ -16,6 +16,15 @@
     <!-- Custom styles for this template -->
     <link href="css/demo.css" rel="stylesheet">
 
+		<!-- Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+		<!--[if IE]>
+			<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+			<link href="http://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet" type="text/css">
+			<link href="http://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet" type="text/css">
+			<link href="http://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
+		<![endif]-->
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -25,102 +34,57 @@
 
   <body>
 
-    <div id="jumbotronMap"></div>
-
     <!-- Main jumbotron  -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Carmen</h1>
-        <h3>Easily customize your site to user location</h3>
-
-        <nav class="navbar" role="navigation">
-          <div class="container">
-            <ul class="nav navbar-nav">
-              <li><a href="#"><span class="glyphicon glyphicon-home"></span>Demo 1</a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-cloud"></span>Demo 2</a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-road"></span>Demo 3</a></li>
-            </ul>
-          </div>
-        </nav>
-
-
+        <h1>Carmen.js</h1>
+        <h2>Where in the world are your users?</h2>
+        <h3>
+        	A tiny, open-source library that lets your site react to user location<br />
+        	Automatically adjust site content to user's geographic location.<br />
+        	Show the store that is closes to your user.<br />
+        </h3>
+        <div id="phone"></div>
       </div>
     </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div>
-      </div><div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div>
-      </div><div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div>
-      </div><div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-        </div>
-      </div>
-      <hr>
+    <div class="welcome-text">
+	    <div class="container">
+	      <div class="row">
+	      	Give your <strong>users</strong> an experience that is fully customized to their <strong>location</strong> with Carmen.js
+	      </div>
+	    </div> <!-- /container -->
+	  </div>
 
-      <footer>
-        <p>&copy; Tal Ater 2014</p>
-      </footer>
-    </div> <!-- /container -->
+    <div class="section-1">
+	    <div class="container">
+	      <div class="row">
+	      	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae ligula semper, euismod libero et, consectetur velit. Maecenas a semper erat. Duis porta tellus est, sit amet tristique libero convallis in. Sed cursus, dolor non volutpat sollicitudin, arcu dolor consectetur tellus, ac porta justo augue ut odio. Phasellus et sapien dolor. Proin lobortis metus nec dui faucibus gravida. Fusce arcu nunc, lacinia sed commodo sed, ullamcorper pharetra tortor. Curabitur nec faucibus orci. Aenean finibus leo elit, id vehicula tortor blandit ac. Sed pellentesque lobortis nibh, eget egestas nunc scelerisque ut. Quisque gravida tincidunt pharetra. In eros urna, eleifend vel volutpat id, vulputate non metus. Ut volutpat, leo eu lacinia bibendum, felis tellus semper libero, eu volutpat magna dolor gravida nisl.</p>
+					<p>In imperdiet mollis dolor, a pretium velit sodales sit amet. Phasellus mollis ex quis feugiat iaculis. Proin id nulla congue, maximus purus vel, efficitur mauris. Vestibulum facilisis condimentum ex, eu ullamcorper sem. Vivamus sed suscipit mi. Praesent ac ligula fermentum, iaculis mi quis, eleifend urna. Nunc dignissim augue nisi, nec vestibulum orci consectetur quis. Nullam dignissim lacus vitae sollicitudin dapibus. Pellentesque varius hendrerit turpis, ut ultrices risus suscipit sit amet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer pulvinar libero felis, vel viverra arcu vestibulum sit amet. Morbi hendrerit sed mauris nec molestie. Donec faucibus et urna a mattis. Sed id arcu et nisi sollicitudin volutpat.</p>
+					<p>Suspendisse dapibus justo nisi, vel commodo felis semper feugiat. In hac habitasse platea dictumst. Cras eleifend dolor nec rutrum posuere. Nam consequat eros in mi luctus, accumsan accumsan magna ullamcorper. Etiam eget ante tincidunt, fringilla mauris consectetur, scelerisque quam. Vestibulum a nibh sit amet felis tristique ultricies vel id magna. Cras sit amet sagittis nibh. Integer id urna tincidunt, consectetur nisl in, mollis nisl. Praesent lorem felis, commodo eu metus vitae, vehicula maximus neque. Sed semper leo ultrices dui ultrices interdum. Nulla facilisi.</p>
+	      </div>
+	    </div> <!-- /container -->
+	  </div>
 
+    <div class="section-2">
+	    <div class="container">
+	      <div class="row">
+	      	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula sem, aliquet id lacinia laoreet, bibendum eu eros. Donec non lectus quam. Aenean rutrum at velit et posuere. Aenean fringilla mollis ante, sit amet cursus augue auctor eget. Maecenas vitae purus ac enim sodales luctus euismod eget justo. Quisque lobortis accumsan massa, ac molestie diam ultrices vitae. Aenean quis nisi a mauris vulputate facilisis. Suspendisse posuere nisi tellus, ac cursus enim sodales tincidunt. Proin id est arcu. Vivamus lobortis volutpat metus eget molestie. Maecenas ullamcorper odio lorem, id ullamcorper odio fringilla eget. Cras varius, risus eu laoreet accumsan, risus elit viverra lacus, a viverra risus tortor eget velit. Proin sed erat ac orci varius eleifend ut quis libero.</p>
+					<p>Integer mattis lectus nisl, non consectetur erat mollis et. Suspendisse posuere laoreet dolor ut vulputate. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras gravida porttitor aliquet. Etiam turpis mi, faucibus sit amet nisl gravida, porttitor fermentum nisi. Nam tempus in justo in consectetur. Sed ullamcorper sapien ac nisi rhoncus, varius sodales augue semper. Vestibulum luctus sollicitudin urna, quis fermentum nulla fermentum vel. Suspendisse aliquam finibus iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus congue purus tempor auctor.</p>
+	      </div>
+	    </div> <!-- /container -->
+	  </div>
+
+    <div class="footer">
+      <div class="container">
+      	<p>&copy; Tal Ater 2014. All rights reserved. The Carmen.js source code is free to use under the <a href="https://raw.githubusercontent.com/TalAter/carmen/master/LICENSE">MIT license</a>.</p>
+	    </div> <!-- /container -->
+	    <div id="sea">
+	    	<div id="waves" class="animated"></div>
+	    	<div id="waves2" class="animated"></div>
+    	</div>
+	  </div>
+    <div id="village"></div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -128,7 +92,6 @@
     <script src="vendor/js/jquery.min.js"></script>
     <script src="vendor/js/bootstrap.min.js"></script>
     <script src="js/demo.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpbXZNp_QcoPN5dVvBgBfxfgpfxm2wv-E"></script>
     <script>
     /*!
      * IE10 viewport hack for Surface/desktop Windows 8 bug
