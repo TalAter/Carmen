@@ -1,6 +1,5 @@
+# Carmen.js
 <img src="https://raw.githubusercontent.com/TalAter/Carmen/master/demo/img/README-logo.png" align="right" />
-### Carmen.js
-
 > Easily adjust your site's content to user location
 
 [![Build Status](https://travis-ci.org/TalAter/Carmen.svg?branch=master)](https://travis-ci.org/TalAter/Carmen)
