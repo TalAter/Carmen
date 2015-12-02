@@ -18,4 +18,4 @@ Feedback and contributions are always welcome and appreciated.
 Tal Ater: [@TalAter](https://twitter.com/TalAter)
 
 ### License
-Licensed under [MIT](https://github.com/TalAter/annyang/blob/master/LICENSE).
+Licensed under [MIT](https://github.com/TalAter/Carmen/blob/master/LICENSE).
