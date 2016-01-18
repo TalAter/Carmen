@@ -26,26 +26,6 @@
   // The id of the geolocation watchPosition
   var _watcherId;
 
-
-  // Run every time a location is changed, or first identified
-  var _locationPing = function(pos) {
-    // try and see if current location is in any of the fences
-    for (var fenceName in _fences) {
-      if (_fences.hasOwnProperty(fenceName)) {
-        var fence = _fences[fenceName];
-        var fenceMatched = _coordsInFence(pos.coords, fence);
-
-        if (fenceMatched) {
-          // Don't rerun function when moving inside a fence
-          if (!fence.inhabited) {
-            fence.fn();
-          }
-        }
-        fence.inhabited = fenceMatched;
-      }
-    }
-  };
-
   // Converting degrees to radians
   var _d2r = Math.PI / 180;
 
@@ -68,12 +48,30 @@
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
     return R * c;
-
   };
 
   // Are the given coordinates within the given fence?
   var _coordsInFence = function(coords, fence) {
     return _calculateDistance(coords, fence.coords)*1000 <= fence.radius;
+  };
+
+  // Run every time a location is changed, or first identified
+  var _locationPing = function(pos) {
+    // try and see if current location is in any of the fences
+    for (var fenceName in _fences) {
+      if (_fences.hasOwnProperty(fenceName)) {
+        var fence = _fences[fenceName];
+        var fenceMatched = _coordsInFence(pos.coords, fence);
+
+        if (fenceMatched) {
+          // Don't rerun function when moving inside a fence
+          if (!fence.inhabited) {
+            fence.fn();
+          }
+        }
+        fence.inhabited = fenceMatched;
+      }
+    }
   };
 
   // Parse a given coordinates string or object
