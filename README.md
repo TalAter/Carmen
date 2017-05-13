@@ -1,4 +1,6 @@
 # Carmen.js
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/TalAter/Carmen.svg)](https://greenkeeper.io/)
 <img src="https://raw.githubusercontent.com/TalAter/Carmen/master/demo/img/README-logo.png" align="right" />
 > Easily adjust your site's content to user location
 
