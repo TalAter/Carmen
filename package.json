@@ -28,5 +28,6 @@
     "grunt-contrib-uglify": "^3.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-contrib-jasmine": "^1.0.3"
-  }
+  },
+  "dependencies": {}
 }
