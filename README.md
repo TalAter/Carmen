@@ -1,9 +1,9 @@
 # Carmen.js
 <img src="https://raw.githubusercontent.com/TalAter/Carmen/master/demo/img/README-logo.png" align="right" />
+
 > Easily adjust your site's content to user location
 
 [![Build Status](https://travis-ci.org/TalAter/Carmen.svg?branch=master)](https://travis-ci.org/TalAter/Carmen)
-[![Dependency Status](https://gemnasium.com/TalAter/Carmen.svg)](https://gemnasium.com/TalAter/Carmen)
 
 Carmen.js allows easy site customization based on your users' physical location.
 
